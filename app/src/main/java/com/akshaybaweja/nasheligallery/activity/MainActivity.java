@@ -13,6 +13,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.akshaybaweja.nasheligallery.R;
 import com.akshaybaweja.nasheligallery.adapter.GalleryAdapter;
@@ -68,8 +69,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new GalleryAdapter.RecyclerTouchListener(getApplicationContext(), recyclerView, new GalleryAdapter.ClickListener() {
             @Override
             public void onClick(View view, int position) {
-                if(view.getAlpha()==0.3f)
-                    view.setAlpha(1.0f);
+                if(view.findViewById(R.id.thumbnail).getAlpha()==0.3f) {
+                    TextView textView = (TextView) view.findViewById(R.id.overlayText);
+                    textView.setVisibility(TextView.INVISIBLE);
+                    view.findViewById(R.id.thumbnail).setAlpha(1.0f);
+                }
                 else {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("images", images);
@@ -85,12 +89,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onLongClick(View view, int position) {
-                if(view.getAlpha()!=0.3f){
-                    view.setAlpha(0.3f);
-                }
-                else
-                    view.setAlpha(1.0f);
+                if(view.findViewById(R.id.thumbnail).getAlpha()!=0.3f){
+                    TextView textView = (TextView) view.findViewById(R.id.overlayText);
+                    textView.setVisibility(TextView.VISIBLE);
 
+                    try {
+                        Image meriImage = images.get(position);
+                        ExifInterface exif = new ExifInterface(meriImage.getImage());
+                        textView.setText(exif.getAttribute(ExifInterface.));
+
+                    } catch (Exception e) {
+
+                    }
+                    view.findViewById(R.id.thumbnail).setAlpha(0.3f);
+                }
             }
         }));
 
