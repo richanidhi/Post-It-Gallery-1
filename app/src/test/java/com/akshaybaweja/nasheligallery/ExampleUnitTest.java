@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery;
+package com.akshaybaweja.postitgallery;
 
 import org.junit.Test;
 

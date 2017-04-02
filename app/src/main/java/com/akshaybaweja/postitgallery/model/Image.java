@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery.model;
+package com.akshaybaweja.postitgallery.model;
 
 import java.io.Serializable;
 

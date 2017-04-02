@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery.activity;
+package com.akshaybaweja.postitgallery.activity;
 
 import android.annotation.TargetApi;
 import android.app.FragmentManager;
@@ -15,9 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.akshaybaweja.nasheligallery.R;
-import com.akshaybaweja.nasheligallery.adapter.GalleryAdapter;
-import com.akshaybaweja.nasheligallery.model.Image;
+import com.akshaybaweja.postitgallery.R;
+import com.akshaybaweja.postitgallery.adapter.GalleryAdapter;
+import com.akshaybaweja.postitgallery.model.Image;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Image meriImage = images.get(position);
                         ExifInterface exif = new ExifInterface(meriImage.getImage());
-                        textView.setText(exif.getAttribute(ExifInterface.));
+                        textView.setText(exif.getAttribute(ExifInterface.TAG_IMAGE_LENGTH));
 
                     } catch (Exception e) {
 

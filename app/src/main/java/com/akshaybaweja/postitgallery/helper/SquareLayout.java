@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery.helper;
+package com.akshaybaweja.postitgallery.helper;
 
 import android.annotation.TargetApi;
 import android.content.Context;

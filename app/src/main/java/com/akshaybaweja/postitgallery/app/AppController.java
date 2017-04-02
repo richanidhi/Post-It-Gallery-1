@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery.app;
+package com.akshaybaweja.postitgallery.app;
 
 import android.app.Application;
 

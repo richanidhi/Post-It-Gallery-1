@@ -1,4 +1,4 @@
-package com.akshaybaweja.nasheligallery.adapter;
+package com.akshaybaweja.postitgallery.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.akshaybaweja.nasheligallery.R;
-import com.akshaybaweja.nasheligallery.model.Image;
+import com.akshaybaweja.postitgallery.R;
+import com.akshaybaweja.postitgallery.model.Image;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
