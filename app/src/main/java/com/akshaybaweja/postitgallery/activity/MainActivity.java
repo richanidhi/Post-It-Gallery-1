@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Image meriImage = images.get(position);
                         ExifInterface exif = new ExifInterface(meriImage.getImage());
-                        textView.setText(exif.getAttribute(ExifInterface.TAG_IMAGE_LENGTH));
+                        textView.setText(exif.getAttribute("tag"));
 
                     } catch (Exception e) {
 
@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     ExifInterface exif = new ExifInterface(jpath);
                     image.setTimestamp(exif.getAttribute(ExifInterface.TAG_DATETIME));
+                    image.setTag(exif.getAttribute("tag"));
                 } catch (Exception e) {
 
                 }

@@ -6,14 +6,16 @@ public class Image implements Serializable{
     private String name;
     private String image;
     private String timestamp;
+    private String tag;
 
     public Image() {
     }
 
-    public Image(String name, String image, String timestamp) {
+    public Image(String name, String image, String timestamp, String Tagtag) {
         this.name = name;
         this.image = image;
         this.timestamp = timestamp;
+        this.tag = Tagtag;
     }
 
     public String getName() {
@@ -41,4 +43,8 @@ public class Image implements Serializable{
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    public void setTag(String tagtag) { this.tag = tagtag; }
+
+    public String getTag(){ return this.tag; }
 }
